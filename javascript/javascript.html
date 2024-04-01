@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+
+    <!-- 자바 스크립트 -->
+    <script>
+        // let: 변수 선언
+        // console.log(): 웹페이지 우클릭 > 검사 > 콘솔 탭에 출력
+        let a = 'hello'
+        let b = 'javascript'
+        console.log(a)
+        console.log(b)
+        console.log(a + " " + b)
+
+        let c = 3, d = 5
+        console.log(c + d)
+        console.log(c + '' + d)
+        console.log(" ")
+
+        // let list = [] : 리스트 선언
+        // list.length : 리스트 길이
+        let list = ['사과', '수박', '딸기', '감']
+        console.log(list[1]) // 수박
+        console.log(list[0]) // 사과
+        console.log(list.length) //4
+        // let a_dict = {} : 딕셔너리 선언     
+        let dict = { 'name': 'Bob', 'age': 27, 'height': 150 }
+        console.log(dict)
+        console.log(dict['name']) // 영수
+        console.log(dict['age']) // 27
+        // 리스트와 딕셔너리 혼용
+        // 딕셔너리 고객별로 정보를 묶을 수 있음.
+        // 리스트는 묶인 정보(딕셔너리)를 한번에 관리할 수 있음.
+        let listd = [
+            { 'name': '영수', 'phone': '010-1234-1234' },
+            { 'name': '철수', 'phone': '010-4321-4321' },
+            { 'name': '영희', 'phone': '010-5678-5678' }
+        ]
+        console.log(listd[0]['name']) //영수
+        console.log(listd[1]['phone']) //010-4321-4321
+        console.log(" ")
+
+        // 배열 요소 출력
+        console.log("원본")
+        listd.forEach((ele) => {
+            console.log(ele)
+        })
+        console.log(" ")
+        // 배열에 요소 추가
+        // 배열명.push(요소) : 배열 끝에 요소 추가
+        // 배열명.unshift(요소) : 배열 앞에 요소 추가
+        // 배열명.splice(인덱스,0,요소1,요소2,...) : '인덱스'번으로 요소 추가. 배열 인덱스는 0부터 시작.
+        console.log("3개 추가")
+        listd.push({ 'name': 'Aria', 'phone': '010-1111-1111' })
+        listd.unshift({ 'name': 'Granada', 'phone': '010-2222-2222' })
+        listd.splice(3, 0, { 'name': '철수 뒤', 'phone': '010-3333-3333' })
+        listd.forEach((ele) => {
+            console.log(ele)
+        })
+        console.log(" ")
+        // 배열 요소 삭제        
+        // 배열명.pop(요소) : 배열 마지막 요소 제거
+        // 배열명.shift(요소) : 배열 첫번째 요소 제거
+        // 배열명.splice(인덱스,n) : 인덱스부터 n개의 요소 제거
+        // listd.pop() // 함수 쓸 때마다 요소가 삭제됨.
+        console.log("추가한 3개 삭제")
+        console.log(listd.pop())
+        element = listd.shift()
+        console.log(element);
+        listd.splice(2, 1)
+        console.log("원본과 동일한지 확인")
+        console.log(listd)
+        console.log(" ")
+
+        // split: 특정 문자로 문자열 나누기
+        let myemail = 'sparta@gmail.com'
+        let result = myemail.split('@') // ['sparta','gmail.com']
+        console.log(result[0]) // sparta
+        console.log(result[1]) // gmail.com
+        let result2 = result[1].split('.') // ['gmail','com']
+        console.log(result2[0]) // gmail -> 우리가 알고 싶었던 것!
+        console.log(result2[1]) // com
+        myemail.split('@')[1].split('.')[0] // gmail 
+        console.log(" ")
+
+        //반복문
+        let fruits = ['사과', '배', '감', '귤']
+        fruits.forEach((a) => {
+            console.log(a)
+        })
+        // 조건문
+        let age = 24
+        if (age > 20) {
+            console.log('성인입니다')
+        } else {
+            console.log('청소년입니다')
+        }
+        // 반복문 + 조건문
+        let ages = [12, 15, 20, 25, 17, 37, 24]
+        ages.forEach((a) => {
+            if (a > 20) {
+                console.log("성인입니다.")
+            }
+            else {
+                if ((a == 20)) {
+                    console.log("20살입니다.")
+                } else {
+                    console.log("청소년입니다.")
+                }
+            }
+        })
+
+    </script>
+</head>
+
+<body>
+    자바스크립트 연습
+</body>
+
+</html>
